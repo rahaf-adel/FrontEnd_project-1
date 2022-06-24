@@ -1,0 +1,264 @@
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+/*-- Header of image and title -- */
+.headerImg {
+  width: 100%;
+  height: 600px;
+  background-image: url(../images/header_img.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.opacity {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.headerImg p {
+  position: absolute;
+  top: 220px;
+  left: 30%;
+  color: white;
+  font-family: comfortaa;
+  font-size: 50px;
+  border-bottom: solid #0064005a;
+}
+/*-- Description -- */
+
+.description {
+  /*Top , Right , Bottom ,Left*/
+  padding-top: 80px;
+}
+
+.description p {
+  width: 45%;
+  font-family: cairo;
+  font-size: 16px;
+  float: left;
+  margin-left: 5%;
+}
+
+.description p span {
+  display: block;
+  font-family: comfortaa;
+  font-size: 40px;
+  color: black;
+  border-bottom: solid thin var(--primary-dark);
+  width: 33%;
+  margin-bottom: 20px;
+}
+
+.description img {
+  width: 40%;
+  height: 400px;
+  margin-left: 6%;
+  /* Right(if minus = left) ,Top and Bottom ,of shadow*/
+  box-shadow: 10px 0 20px black;
+}
+.typesOfCoffee ,.dessertsMenu ,.ourStaff{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.typesOfCoffee > span ,.dessertsMenu > span ,.ourStaff > span {
+  font-family: comfortaa;
+  font-size: 40px;
+  color: black;
+  border-bottom: solid thin var(--primary-dark);
+  width: 33%; /* length of border */
+}
+hr{
+    color: var(--primary-dark);;
+}
+
+.typesOfCoffee img {
+  transition: 1s;
+  padding: 15px;
+  width: 300px;
+  height: 250px;
+  margin: 1%;
+  box-shadow: 10px 0 20px black;
+}
+
+.typesOfCoffee img:hover {
+  filter: grayscale(100%); /* give it uncolor*/
+  transform: scale(1.1);/* bigger*/
+}
+/* Menu Page */
+.contener {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;/*specifies that the flexible items will wrap if necessary*/
+  justify-content: space-around;
+}
+.card {
+  position: relative;
+  margin: 20px 0;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  transform-style: preserve-3d; /*transform-style property specifies how nested elements are rendered in 3D space.*/
+  transform: perspective(2000px);
+  transition: 1s;
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5);
+}
+.card:hover {
+  z-index: 1000;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 2; /*cover the diacription*/
+  transition: 1s;
+}
+.card:hover .imgBox {
+  transform: rotateY(-135deg); /*open as book*/
+}
+.card .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+}
+h1 {
+  font-size: 40px;
+  font-family: comfortaa;
+  text-align: center;
+  border-bottom: solid thin #006400;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+/* Staff Page */
+.containerOfStaff {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.containerOfStaff .cardOfStaff {
+  position: relative;
+  max-width: 300px;
+  height: 215px;
+  background: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.containerOfStaff .cardOfStaff:hover {
+  height: 420px;
+}
+.containerOfStaff .cardOfStaff .imageBox {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -60px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.containerOfStaff .cardOfStaff .imageBox img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.containerOfStaff .cardOfStaff .contentStaff {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out; /*move of content*/
+}
+.containerOfStaff .cardOfStaff:hover .contentStaff {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+/* Mode of pages*/
+body {
+  --text-light: rgba(243, 244, 246, 0.9);
+  --primary-dark: rgba(55, 65, 81, 1);
+  --secondary-dark: rgba(218, 222, 230, 0.7);
+  --bg-light: rgba(243, 244, 246, 0.3);
+  --bg-btn: rgba(67, 56, 202, 0.8);
+
+  /* css style */
+  background-color: var(--text-light);
+}
+body.dark {
+  --text-light: rgba(55, 65, 81, 1);
+  --primary-dark: rgba(243, 244, 246, 1);
+  --secondary-dark: rgba(243, 244, 246, 0.3);
+  --bg-btn: rgba(219, 233, 29, 0.897);
+  --bg-light: rgba(45, 49, 54, 0.5);
+}
+.secondary-dark {
+  background-color: var(--secondary-dark);
+}
+.primary-dark {
+  color: var(--primary-dark);
+}
+.description .primary-dark > span {
+  color: var(--primary-dark);
+  border-bottom: solid thin #e6ece6;
+}
+.typesOfCoffee > span ,.dessertsMenu >span ,.ourStaff > span{
+  color: var(--primary-dark);
+  border-bottom: solid thin var(--primary-dark);
+}
+input[type="checkbox"] {
+  -webkit-appearance: none; /* for remove squer of checkbox*/
+  position: relative;
+  width: 70px;
+  height: 30px;
+  border-radius: 50px;
+  outline: none; /*Disable the feature to click on the box*/
+  top: 10px;
+  background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+  background-size: cover;
+}
+
+/* the inner button*/
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: var(--primary-dark);
+  border-radius: 50px;
+}
+
+input[type="checkbox"]:checked:before {
+  transform: translate(100%);
+}
+
+input[type="checkbox"]:checked {
+  background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+}
