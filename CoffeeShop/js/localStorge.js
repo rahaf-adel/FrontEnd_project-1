@@ -1,3 +1,4 @@
+/* This is function for save information of user in local device */
 loginInfo =() =>  {
     let myEmail = document.getElementById("email").value;
     localStorage.setItem("myEmail", myEmail);
